@@ -149,6 +149,13 @@ nav {
   display: grid; place-items: center;
 }
 .nav-theme:hover { color: var(--fg); }
+.nav-lang {
+  background: none; border: 1px solid var(--border); cursor: pointer;
+  color: var(--muted); padding: 3px 8px; font-size: .65rem;
+  letter-spacing: .12em; font-family: 'DM Sans', sans-serif;
+  transition: color .15s, border-color .15s;
+}
+.nav-lang:hover { color: var(--fg); border-color: var(--fg); }
 
 /* ── HERO (split) ── */
 .hero {
@@ -931,14 +938,15 @@ footer {
   <div class="nav-in">
     <a href="#" class="nav-brand">Adama Ngom</a>
     <ul class="nav-links">
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#comp">Compétences</a></li>
-      <li><a href="#parcours">Parcours</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#apropos" data-i18n="nav-apropos">À propos</a></li>
+      <li><a href="#projets" data-i18n="nav-projets">Projets</a></li>
+      <li><a href="#comp" data-i18n="nav-comp">Compétences</a></li>
+      <li><a href="#parcours" data-i18n="nav-parcours">Parcours</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
     </ul>
     <div class="nav-r">
-      <span class="nav-status">Open to internship</span>
+      <span class="nav-status" data-i18n="status">Disponible pour un stage</span>
+      <button class="nav-lang" id="langBtn" aria-label="Langue">EN</button>
       <button class="nav-theme" id="themeBtn" aria-label="Thème">
         <svg id="iS" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg id="iM" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -954,32 +962,32 @@ footer {
       <img src="photo.jpg" alt="Adama Ngom" onerror="this.style.display='none';this.parentNode.innerHTML='AN';">
     </div>
     <div class="hero-l-info">
-      <span class="hl-gold">Open to internship</span>
+      <span class="hl-gold" data-i18n="status">Disponible pour un stage</span>
       <span>Dakar, Sénégal</span>
     </div>
   </div>
 
   <div class="hero-r">
-    <p class="hero-eyebrow ha1">Développeuse Full Stack · Sénégal</p>
+    <p class="hero-eyebrow ha1" data-i18n="hero-eyebrow">Développeuse Full Stack · Sénégal</p>
     <h1 class="name ha2">Adama<br>Ngom</h1>
     <hr class="hero-rule ha3">
     <div class="hero-cols ha4">
       <div>
-        <p class="hero-role">Licence Informatique &amp; Télécoms · Dév. d'Applications Réparties</p>
-        <p class="hero-bio">J'ai fini ma licence à l'ESMT avec un PFE sur les audiences judiciaires à distance, noté 16/20, mention très bien. Je code en React, Laravel et Python. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD et cherche un stage.</p>
+        <p class="hero-role" data-i18n="hero-role">Licence Télécommunications et Informatique · Dév. d'Applications Réparties</p>
+        <p class="hero-bio" data-i18n="hero-bio">J'ai fini ma licence à l'ESMT avec un PFE sur les audiences judiciaires à distance. Je code en React, Laravel et Python. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD et cherche un stage.</p>
       </div>
       <div class="info-list">
-        <div class="info-pair"><span class="ikey">Formation</span><span class="ival">ESMT · Licence 2026</span></div>
-        <div class="info-pair"><span class="ikey">Prochain</span><span class="ival">Master IA — ESP UCAD</span></div>
-        <div class="info-pair"><span class="ikey">Disponible</span><span class="ival">Lun–Ven, journée</span></div>
-        <div class="info-pair"><span class="ikey">Langues</span><span class="ival">FR · EN bilingue · Wolof</span></div>
+        <div class="info-pair"><span class="ikey" data-i18n="info-form-k">Formation</span><span class="ival" data-i18n="info-form-v">ESMT · Licence 2026</span></div>
+        <div class="info-pair"><span class="ikey" data-i18n="info-next-k">Prochain</span><span class="ival" data-i18n="info-next-v">Master IA — ESP UCAD</span></div>
+        <div class="info-pair"><span class="ikey" data-i18n="info-dispo-k">Disponible</span><span class="ival" data-i18n="info-dispo-v">Lun–Ven, journée</span></div>
+        <div class="info-pair"><span class="ikey" data-i18n="info-lang-k">Langues</span><span class="ival" data-i18n="info-lang-v">FR · EN courant · Wolof</span></div>
       </div>
       <div class="hero-cta">
-        <a href="#projets" class="cta-link">Voir les projets <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="#projets" class="cta-link"><span data-i18n="cta-proj">Voir les projets</span> <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         <a href="https://www.linkedin.com/in/adama-ngom-4b11282a2/" class="cta-link" target="_blank" rel="noopener">LinkedIn <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg></a>
         <a href="https://github.com/Adastar-dev" class="cta-link" target="_blank" rel="noopener">GitHub <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg></a>
-        <a href="#contact" class="cta-link">Me contacter <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="CV-Adama-NGOM.pdf" download class="cta-link" style="color:var(--gold);border-color:var(--gold)">Télécharger CV <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
+        <a href="#contact" class="cta-link"><span data-i18n="cta-contact">Me contacter</span> <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="CV-Adama-NGOM.pdf" download class="cta-link" style="color:var(--gold);border-color:var(--gold)"><span data-i18n="cta-cv">Télécharger CV</span> <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
       </div>
     </div>
   </div>
@@ -989,28 +997,28 @@ footer {
 <section class="sec" id="apropos">
   <div class="sec-hd reveal">
     <span class="sec-num">00</span>
-    <h2 class="sec-title">À propos</h2>
+    <h2 class="sec-title" data-i18n="sec-00">À propos</h2>
   </div>
   <div class="apropos-grid reveal">
     <div class="apropos-text">
-      <p class="apropos-lead">Je construis des outils numériques qui résolvent de vrais problèmes — pas des démos.</p>
-      <p>Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d'état civil à distance, sans file d'attente, avec transcription IA en temps réel. Soutenu avec 16/20, mention très bien.</p>
-      <p>Formée à l'ESMT en Développement d'Applications Réparties, je maîtrise la chaîne complète — du design d'API REST à l'interface React, en passant par la modélisation UML, les bases de données et les réseaux. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD pour aller plus loin dans l'intelligence artificielle appliquée.</p>
-      <p>Je cherche un stage où je peux apprendre vite, contribuer concrètement et travailler sur des produits qui ont un impact réel — en Afrique ou à l'international.</p>
+      <p class="apropos-lead" data-i18n="apropos-lead">Je construis des outils numériques qui résolvent de vrais problèmes. Pas des démos.</p>
+      <p data-i18n-html="apropos-p1">Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d'état civil à distance, sans file d'attente, avec transcription IA en temps réel.</p>
+      <p data-i18n="apropos-p2">Formée à l'ESMT en Développement d'Applications Réparties, je maîtrise la chaîne complète : du design d'API REST à l'interface React, en passant par la modélisation UML, les bases de données et les réseaux. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD pour aller plus loin dans l'intelligence artificielle appliquée.</p>
+      <p data-i18n="apropos-p3">Je cherche un stage où je peux apprendre vite, contribuer concrètement et travailler sur des produits qui ont un impact réel, en Afrique ou à l'international.</p>
     </div>
     <div class="apropos-aside">
       <div class="apropos-card">
-        <div class="ac-label">Ce que je recherche</div>
-        <div class="ac-title">Stage · 3 mois ou plus</div>
+        <div class="ac-label" data-i18n="ac-label">Ce que je recherche</div>
+        <div class="ac-title" data-i18n="ac-title">Stage · 3 mois ou plus</div>
         <div class="ac-list">
-          <div class="ac-item">Développement Full Stack</div>
+          <div class="ac-item" data-i18n="ac-item">Développement Full Stack</div>
         </div>
       </div>
       <div class="apropos-langs">
-        <div class="al-label">Langues</div>
-        <div class="al-row"><span class="al-name">Français</span><span class="al-level">Natif</span><div class="al-bar"><div class="al-fill" style="width:100%"></div></div></div>
-        <div class="al-row"><span class="al-name">Wolof</span><span class="al-level">Natif</span><div class="al-bar"><div class="al-fill" style="width:100%"></div></div></div>
-        <div class="al-row"><span class="al-name">Anglais</span><span class="al-level">Courant</span><div class="al-bar"><div class="al-fill" style="width:82%"></div></div></div>
+        <div class="al-label" data-i18n="al-label">Langues</div>
+        <div class="al-row"><span class="al-name" data-i18n="lang-fr">Français</span><span class="al-level" data-i18n="lang-fr-l">Natif</span><div class="al-bar"><div class="al-fill" style="width:100%"></div></div></div>
+        <div class="al-row"><span class="al-name">Wolof</span><span class="al-level" data-i18n="lang-nat">Natif</span><div class="al-bar"><div class="al-fill" style="width:100%"></div></div></div>
+        <div class="al-row"><span class="al-name" data-i18n="lang-en">Anglais</span><span class="al-level" data-i18n="lang-en-l">Courant</span><div class="al-bar"><div class="al-fill" style="width:82%"></div></div></div>
       </div>
     </div>
   </div>
@@ -1021,10 +1029,10 @@ footer {
 <!-- STATS BAND -->
 <div class="stats-band reveal">
   <div class="stats-in">
-    <div class="s-item"><div class="s-n gold">16/20</div><div class="s-l">PFE · Mention très bien</div></div>
-    <div class="s-item"><div class="s-n">19</div><div class="s-l">Dépôts GitHub</div></div>
-    <div class="s-item"><div class="s-n">2</div><div class="s-l">Certif. Cisco</div></div>
-    <div class="s-item"><div class="s-n">EN</div><div class="s-l">Bilingue</div></div>
+    <div class="s-item"><div class="s-n gold">16/20</div><div class="s-l" data-i18n="stat-pfe">PFE · Mention très bien</div></div>
+    <div class="s-item"><div class="s-n">19</div><div class="s-l" data-i18n="stat-gh">Dépôts GitHub</div></div>
+    <div class="s-item"><div class="s-n">2</div><div class="s-l" data-i18n="stat-cisco">Certif. Cisco</div></div>
+    <div class="s-item"><div class="s-n">EN</div><div class="s-l" data-i18n="stat-en">Courant</div></div>
   </div>
 </div>
 
@@ -1032,13 +1040,13 @@ footer {
 <section class="sec" id="projets">
   <div class="sec-hd reveal">
     <span class="sec-num">01</span>
-    <h2 class="sec-title">Projets sélectionnés</h2>
+    <h2 class="sec-title" data-i18n="sec-01">Projets sélectionnés</h2>
   </div>
 
   <!-- Featured: Audience+ -->
   <div class="feat reveal">
     <div>
-      <p class="feat-tag">Projet de Fin d'Études — Note 16 / 20</p>
+      <p class="feat-tag" data-i18n="feat-tag">Projet de Fin d'Études · Note 16 / 20</p>
       <h3 class="feat-name">Audience+</h3>
       <div class="feat-mockup">
         <svg viewBox="0 0 440 210" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1067,7 +1075,7 @@ footer {
           <rect x="200" y="160" width="40" height="8" rx="1" fill="rgba(255,255,255,.18)"/>
         </svg>
       </div>
-      <p class="feat-desc">PFE soutenu avec <strong>16/20</strong> — Application web pour dématérialiser les audiences d'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et OpenAI Whisper retranscrit l'audience en temps réel. Six rôles distincts avec espaces dédiés. L'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d'état centralisée. Principale difficulté surmontée : synchroniser le flux audio Jitsi avec l'API Whisper pour obtenir une transcription sans décalage perceptible.</p>
+      <p class="feat-desc" data-i18n="feat-desc">Application web pour dématérialiser les audiences d'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et OpenAI Whisper retranscrit l'audience en temps réel. Six rôles distincts avec espaces dédiés. L'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d'état centralisée. Principale difficulté surmontée : découper le flux audio Jitsi en segments et les envoyer à l'API Whisper pour une transcription quasi temps réel.</p>
       <div class="feat-stack">
         <span class="f-tag hl">React</span>
         <span class="f-tag hl">Laravel</span>
@@ -1082,12 +1090,12 @@ footer {
     </div>
 
     <div class="feat-right">
-      <div class="feat-hi"><div class="fh-num">— i</div><div class="fh-t">Visioconférence en direct</div><div class="fh-s">Jitsi Meet intégré pour les audiences à distance</div></div>
-      <div class="feat-hi"><div class="fh-num">— ii</div><div class="fh-t">Transcription IA</div><div class="fh-s">OpenAI Whisper retranscrit chaque audience en temps réel</div></div>
-      <div class="feat-hi"><div class="fh-num">— iii</div><div class="fh-t">OTP & notifications par email</div><div class="fh-s">Authentification, convocations et alertes envoyées par email</div></div>
-      <div class="feat-hi"><div class="fh-num">— iv</div><div class="fh-t">API REST · Laravel / MySQL</div><div class="fh-s">Backend structuré avec modélisation UML complète</div></div>
-      <div class="feat-hi"><div class="fh-num">— v</div><div class="fh-t">Gestion des rôles</div><div class="fh-s">Juge, greffier, procureur, justiciable, avocat et admin — chacun avec son espace dédié</div></div>
-      <div class="feat-hi"><div class="fh-num">— vi</div><div class="fh-t">Dossiers d'audience</div><div class="fh-s">Création, suivi et archivage de chaque affaire de bout en bout</div></div>
+      <div class="feat-hi"><div class="fh-num">i</div><div class="fh-t" data-i18n="fh-t-1">Visioconférence en direct</div><div class="fh-s" data-i18n="fh-s-1">Jitsi Meet intégré pour les audiences à distance</div></div>
+      <div class="feat-hi"><div class="fh-num">ii</div><div class="fh-t" data-i18n="fh-t-2">Transcription IA</div><div class="fh-s" data-i18n="fh-s-2">OpenAI Whisper retranscrit chaque audience en temps réel</div></div>
+      <div class="feat-hi"><div class="fh-num">iii</div><div class="fh-t" data-i18n="fh-t-3">OTP & notifications par email</div><div class="fh-s" data-i18n="fh-s-3">Authentification, convocations et alertes envoyées par email</div></div>
+      <div class="feat-hi"><div class="fh-num">iv</div><div class="fh-t" data-i18n="fh-t-4">API REST · Laravel / MySQL</div><div class="fh-s" data-i18n="fh-s-4">Backend structuré avec modélisation UML complète</div></div>
+      <div class="feat-hi"><div class="fh-num">v</div><div class="fh-t" data-i18n="fh-t-5">Gestion des rôles</div><div class="fh-s" data-i18n="fh-s-5">Juge, greffier, procureur, justiciable, avocat et admin, chacun avec son espace dédié</div></div>
+      <div class="feat-hi"><div class="fh-num">vi</div><div class="fh-t" data-i18n="fh-t-6">Dossiers d'audience</div><div class="fh-s" data-i18n="fh-s-6">Création, suivi et archivage de chaque affaire de bout en bout</div></div>
     </div>
   </div>
 
@@ -1100,8 +1108,8 @@ footer {
       </div>
       <div class="pc-body">
         <div class="pc-name">Cahier de Dettes</div>
-        <div class="pc-cat">Gestion · Finance</div>
-        <div class="pc-desc">Appli pour suivre ce qu'on doit et ce qu'on nous doit — simple, rapide, sans prise de tête.</div>
+        <div class="pc-cat" data-i18n="cat-cahier">Gestion · Finance</div>
+        <div class="pc-desc" data-i18n="desc-cahier">Appli pour suivre ce qu'on doit et ce qu'on nous doit. Simple, rapide, sans prise de tête.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
     </a>
@@ -1111,9 +1119,9 @@ footer {
         <svg viewBox="0 0 220 84" fill="none" style="width:100%;height:100%;position:absolute;inset:0"><rect x="12" y="8" width="60" height="8" rx="1" fill="rgba(255,255,255,.15)"/><rect x="80" y="8" width="40" height="8" rx="1" fill="rgba(255,255,255,.08)"/><rect x="12" y="22" width="196" height="1" fill="rgba(255,255,255,.08)"/><rect x="12" y="30" width="40" height="7" rx="1" fill="rgba(255,255,255,.12)"/><rect x="60" y="30" width="60" height="7" rx="1" fill="rgba(255,255,255,.1)"/><rect x="128" y="30" width="40" height="7" rx="1" fill="rgba(100,220,160,.25)"/><rect x="12" y="43" width="40" height="7" rx="1" fill="rgba(255,255,255,.1)"/><rect x="60" y="43" width="50" height="7" rx="1" fill="rgba(255,255,255,.08)"/><rect x="128" y="43" width="40" height="7" rx="1" fill="rgba(100,220,160,.2)"/><rect x="12" y="56" width="40" height="7" rx="1" fill="rgba(255,255,255,.1)"/><rect x="60" y="56" width="65" height="7" rx="1" fill="rgba(255,255,255,.08)"/><rect x="128" y="56" width="40" height="7" rx="1" fill="rgba(220,100,100,.25)"/><rect x="12" y="70" width="80" height="6" rx="2" fill="rgba(100,220,160,.3)"/></svg>
       </div>
       <div class="pc-body">
-        <div class="pc-name">Ophtacare</div>
-        <div class="pc-cat">Santé · Web App</div>
-        <div class="pc-desc">Application pour une clinique ophtalmologique — dossiers patients, consultations, rendez-vous.</div>
+        <div class="pc-name">OphtaCare</div>
+        <div class="pc-cat" data-i18n="cat-opht">Santé · Clinique unique</div>
+        <div class="pc-desc" data-i18n="desc-opht">Version initiale : gestion des dossiers patients, consultations et rendez-vous pour une seule clinique.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
     </a>
@@ -1124,8 +1132,8 @@ footer {
       </div>
       <div class="pc-body">
         <div class="pc-name">Inondations App</div>
-        <div class="pc-cat">Environnement · Cartographie</div>
-        <div class="pc-desc">Signalement et cartographie des zones inondables au Sénégal.</div>
+        <div class="pc-cat" data-i18n="cat-inond">Environnement · Cartographie</div>
+        <div class="pc-desc" data-i18n="desc-inond">Signalement et cartographie des zones inondables au Sénégal.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
     </a>
@@ -1136,8 +1144,8 @@ footer {
       </div>
       <div class="pc-body">
         <div class="pc-name">Gestion de Stock</div>
-        <div class="pc-cat">Business · Inventaire</div>
-        <div class="pc-desc">Gestion des stocks pour petites entreprises — entrées, sorties, alertes de rupture.</div>
+        <div class="pc-cat" data-i18n="cat-stock">Business · Inventaire</div>
+        <div class="pc-desc" data-i18n="desc-stock">Gestion des stocks pour petites entreprises : entrées, sorties, alertes de rupture.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
     </a>
@@ -1148,8 +1156,8 @@ footer {
       </div>
       <div class="pc-body">
         <div class="pc-name">ESMT Platform</div>
-        <div class="pc-cat">Éducation · Full Stack</div>
-        <div class="pc-desc">Plateforme pour mon école — cours, notes et gestion de l'administration.</div>
+        <div class="pc-cat" data-i18n="cat-esmt">Éducation · Full Stack</div>
+        <div class="pc-desc" data-i18n="desc-esmt">Plateforme pour mon école : cours, notes et gestion de l'administration.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
     </a>
@@ -1160,8 +1168,8 @@ footer {
       </div>
       <div class="pc-body">
         <div class="pc-name">OphtaCare Perso</div>
-        <div class="pc-cat">Santé · Multi-sites</div>
-        <div class="pc-desc">Suivi de patients multi-sites pour ophtalmologue — agenda, consultations, ordonnances PDF, données cliniques chiffrées. Laravel 12 + Next.js, déployable sur Docker / Fly.io.</div>
+        <div class="pc-cat" data-i18n="cat-opht2">Santé · Multi-sites</div>
+        <div class="pc-desc" data-i18n="desc-opht2">Version étendue : gestion multi-sites pour un ophtalmologue en libéral : agenda, consultations, ordonnances PDF, données chiffrées. Laravel 12 + Next.js.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
     </a>
@@ -1175,12 +1183,12 @@ footer {
 <section class="sec" id="comp">
   <div class="sec-hd reveal">
     <span class="sec-num">02</span>
-    <h2 class="sec-title">Compétences techniques</h2>
+    <h2 class="sec-title" data-i18n="sec-02">Compétences techniques</h2>
   </div>
 
   <div class="skills-tbl reveal">
     <div class="sk-row">
-      <span class="sk-key">Langages</span>
+      <span class="sk-key" data-i18n="sk-lang">Langages</span>
       <div>
         <div class="sk-chips">
           <span class="sk-chip">Python<span class="sk-dots"><span class="sk-dot on"></span><span class="sk-dot on"></span><span class="sk-dot on"></span></span></span>
@@ -1208,7 +1216,7 @@ footer {
       </div>
     </div>
     <div class="sk-row">
-      <span class="sk-key">Bases de données</span>
+      <span class="sk-key" data-i18n="sk-db">Bases de données</span>
       <div>
         <div class="sk-chips">
           <span class="sk-chip">MySQL<span class="sk-dots"><span class="sk-dot on"></span><span class="sk-dot on"></span><span class="sk-dot on"></span></span></span>
@@ -1219,7 +1227,7 @@ footer {
       </div>
     </div>
     <div class="sk-row">
-      <span class="sk-key">Outils &amp; DevOps</span>
+      <span class="sk-key" data-i18n="sk-tools">Outils &amp; DevOps</span>
       <div>
         <div class="sk-chips">
           <span class="sk-chip">Git / GitHub<span class="sk-dots"><span class="sk-dot on"></span><span class="sk-dot on"></span><span class="sk-dot on"></span></span></span>
@@ -1231,7 +1239,7 @@ footer {
       </div>
     </div>
     <div class="sk-row">
-      <span class="sk-key">Systèmes &amp; Réseaux</span>
+      <span class="sk-key" data-i18n="sk-sys">Systèmes &amp; Réseaux</span>
       <div>
         <div class="sk-chips">
           <span class="sk-chip">Linux<span class="sk-dots"><span class="sk-dot on"></span><span class="sk-dot on"></span><span class="sk-dot"></span></span></span>
@@ -1258,12 +1266,12 @@ footer {
     <div class="cert-item">
       <div class="cert-tag">Cisco · 2025</div>
       <div class="cert-name">CCNA — Switching, Routing &amp; Wireless Essentials</div>
-      <div class="cert-sub">OSPF, VLAN, STP, réseaux sans fil</div>
+      <div class="cert-sub" data-i18n="cert-sub-1">OSPF, VLAN, STP, réseaux sans fil</div>
     </div>
     <div class="cert-item">
       <div class="cert-tag">Cisco · 2024</div>
       <div class="cert-name">CCNAv7 — Introduction to Networks</div>
-      <div class="cert-sub">Adressage IP, configuration d'équipements Cisco</div>
+      <div class="cert-sub" data-i18n="cert-sub-2">Adressage IP, configuration d'équipements Cisco</div>
     </div>
   </div>
 </section>
@@ -1274,41 +1282,41 @@ footer {
 <section class="sec" id="parcours">
   <div class="sec-hd reveal">
     <span class="sec-num">03</span>
-    <h2 class="sec-title">Formation &amp; Expérience</h2>
+    <h2 class="sec-title" data-i18n="sec-03">Formation &amp; Expérience</h2>
   </div>
 
   <div class="parcours-grid">
     <div class="reveal">
-      <p class="parc-label">Formation</p>
+      <p class="parc-label" data-i18n="parc-form">Formation</p>
       <div>
         <div class="tl-item">
-          <span class="tl-year">À venir</span>
+          <span class="tl-year" data-i18n="tl-next">À venir</span>
           <div>
             <div class="tl-title">Master IA &amp; Big Data</div>
             <div class="tl-org">École Supérieure Polytechnique (ESP) — UCAD</div>
-            <div class="tl-desc">Cours du soir</div>
+            <div class="tl-desc" data-i18n="tl-esp-desc">Cours du soir</div>
           </div>
         </div>
         <div class="tl-item">
           <span class="tl-year">2023 – 2026</span>
           <div>
-            <div class="tl-title">Licence Télécoms &amp; Informatique</div>
-            <div class="tl-org">ESMT — Développement d'Applications Réparties</div>
-            <div class="tl-desc">Cycle complet : front-end / back-end, bases de données, réseaux. PFE soutenu avec 16/20, mention très bien.</div>
+            <div class="tl-title" data-i18n="tl-licence">Licence Télécommunications et Informatique</div>
+            <div class="tl-org" data-i18n="tl-esmt-org">ESMT — Développement d'Applications Réparties</div>
+            <div class="tl-desc" data-i18n="tl-esmt-desc">Cycle complet : front-end / back-end, bases de données, réseaux. PFE soutenu avec 16/20, mention très bien.</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="reveal">
-      <p class="parc-label">Expérience &amp; Engagement</p>
+      <p class="parc-label" data-i18n="parc-exp">Expérience &amp; Engagement</p>
       <div>
         <div class="tl-item">
           <span class="tl-year">Août – Oct. 2026</span>
           <div>
-            <div class="tl-title">Stagiaire — SAMU National</div>
-            <div class="tl-org">Centre de Régulation (CRRA), Dakar</div>
-            <div class="tl-desc">
+            <div class="tl-title" data-i18n="tl-samu">Stagiaire — SAMU National</div>
+            <div class="tl-org" data-i18n="tl-samu-org">Centre de Régulation (CRRA), Dakar</div>
+            <div class="tl-desc" data-i18n-html="tl-samu-desc">
               <ul>
                 <li>Analyse des outils numériques (Genesis, Patient Max)</li>
                 <li>Étude du circuit de traitement des appels d'urgence</li>
@@ -1320,9 +1328,9 @@ footer {
         <div class="tl-item">
           <span class="tl-year">2024 – 2026</span>
           <div>
-            <div class="tl-title">Vice-présidente &amp; Trésorière</div>
-            <div class="tl-org">Amicale des étudiants de l'ESMT</div>
-            <div class="tl-desc">
+            <div class="tl-title" data-i18n="tl-vp">Vice-présidente &amp; Trésorière</div>
+            <div class="tl-org" data-i18n="tl-vp-org">Amicale des étudiants de l'ESMT</div>
+            <div class="tl-desc" data-i18n-html="tl-vp-desc">
               <ul>
                 <li>Pilotage logistique et événementiel de l'amicale</li>
                 <li>Gestion financière et suivi budgétaire</li>
@@ -1341,8 +1349,8 @@ footer {
 <div id="contact">
   <div class="contact-in">
     <div class="reveal">
-      <h2 class="contact-h">Discutons de votre projet</h2>
-      <p class="contact-sub">Disponible du lundi au vendredi en journée pour un stage en développement.</p>
+      <h2 class="contact-h" data-i18n="contact-h">Discutons de votre projet</h2>
+      <p class="contact-sub" data-i18n="contact-sub">Disponible du lundi au vendredi en journée pour un stage en développement.</p>
       <div class="contact-links">
         <a href="https://github.com/Adastar-dev" class="contact-ext" target="_blank" rel="noopener">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -1357,30 +1365,30 @@ footer {
     <div class="reveal">
       <form id="contactForm" action="https://formspree.io/f/9fe08e9d-0b1b-4f6d-89fd-142ae22b1e48" method="POST">
         <div class="form-field">
-          <label class="form-label">Nom</label>
-          <input type="text" name="name" required placeholder="Votre nom">
+          <label class="form-label" data-i18n="form-nom">Nom</label>
+          <input type="text" name="name" required placeholder="Votre nom" data-i18n-ph="ph-nom">
         </div>
         <div class="form-field">
-          <label class="form-label">Email</label>
+          <label class="form-label" data-i18n="form-email">Email</label>
           <input type="email" name="email" required placeholder="votre@email.com">
         </div>
         <div class="form-field">
-          <label class="form-label">Message</label>
-          <textarea name="message" required rows="4" placeholder="Votre message…"></textarea>
+          <label class="form-label" data-i18n="form-msg">Message</label>
+          <textarea name="message" required rows="4" placeholder="Votre message…" data-i18n-ph="ph-msg"></textarea>
         </div>
-        <button type="submit" class="form-submit">Envoyer <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        <button type="submit" class="form-submit"><span data-i18n="form-submit">Envoyer</span> <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
         <p id="formStatus" hidden style="margin-top:12px;font-size:.78rem;color:var(--gold)"></p>
       </form>
       <div class="contact-list" style="margin-top:28px;border-top:1px solid var(--border);padding-top:20px">
         <div class="c-row">
           <span class="c-k">Email</span>
           <span class="c-v">adamangompro0@gmail.com</span>
-          <button class="c-btn" data-copy="adamangompro0@gmail.com">Copier</button>
+          <button class="c-btn" data-copy="adamangompro0@gmail.com" data-i18n="c-copy">Copier</button>
         </div>
         <div class="c-row">
-          <span class="c-k">Téléphone</span>
+          <span class="c-k" data-i18n="c-phone">Téléphone</span>
           <span class="c-v">+221 78 170 53 48</span>
-          <button class="c-btn" data-copy="+221781705348">Copier</button>
+          <button class="c-btn" data-copy="+221781705348" data-i18n="c-copy">Copier</button>
         </div>
       </div>
     </div>
@@ -1394,7 +1402,7 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="foot-in">
-    <span class="foot-copy">© 2026 Adama Ngom · Dakar, Sénégal</span>
+    <span class="foot-copy" data-i18n="foot-copy">© 2026 Adama Ngom · Dakar, Sénégal</span>
     <div class="foot-langs">
       <span>Français</span>
       <span>English</span>
@@ -1404,6 +1412,134 @@ footer {
 </footer>
 
 <script>
+  /* ── LANG TOGGLE ── */
+  (function() {
+    const T = {
+      fr: {
+        'nav-apropos':'À propos','nav-projets':'Projets','nav-comp':'Compétences','nav-parcours':'Parcours','nav-contact':'Contact',
+        'status':'Disponible pour un stage',
+        'hero-eyebrow':'Développeuse Full Stack · Sénégal',
+        'hero-role':'Licence Télécommunications et Informatique · Dév. d\'Applications Réparties',
+        'hero-bio':'J\'ai fini ma licence à l\'ESMT avec un PFE sur les audiences judiciaires à distance. Je code en React, Laravel et Python. Je prépare un Master IA & Big Data à l\'ESP-UCAD et cherche un stage.',
+        'info-form-k':'Formation','info-form-v':'ESMT · Licence 2026',
+        'info-next-k':'Prochain','info-next-v':'Master IA — ESP UCAD',
+        'info-dispo-k':'Disponible','info-dispo-v':'Lun–Ven, journée',
+        'info-lang-k':'Langues','info-lang-v':'FR · EN courant · Wolof',
+        'cta-proj':'Voir les projets','cta-contact':'Me contacter','cta-cv':'Télécharger CV',
+        'stat-pfe':'PFE · Mention très bien','stat-gh':'Dépôts GitHub','stat-cisco':'Certif. Cisco','stat-en':'Courant',
+        'sec-00':'À propos','sec-01':'Projets sélectionnés','sec-02':'Compétences techniques','sec-03':'Formation & Expérience','sec-04':'Contact',
+        'apropos-lead':'Je construis des outils numériques qui résolvent de vrais problèmes. Pas des démos.',
+        'apropos-p1':'Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d\'état civil à distance, sans file d\'attente, avec transcription IA en temps réel.',
+        'apropos-p2':'Formée à l\'ESMT en Développement d\'Applications Réparties, je maîtrise la chaîne complète : du design d\'API REST à l\'interface React, en passant par la modélisation UML, les bases de données et les réseaux. Je prépare un Master IA & Big Data à l\'ESP-UCAD pour aller plus loin dans l\'intelligence artificielle appliquée.',
+        'apropos-p3':'Je cherche un stage où je peux apprendre vite, contribuer concrètement et travailler sur des produits qui ont un impact réel, en Afrique ou à l\'international.',
+        'ac-label':'Ce que je recherche','ac-title':'Stage · 3 mois ou plus','ac-item':'Développement Full Stack',
+        'al-label':'Langues','lang-fr':'Français','lang-fr-l':'Natif','lang-nat':'Natif','lang-en':'Anglais','lang-en-l':'Courant',
+        'feat-tag':'Projet de Fin d\'Études · Note 16 / 20',
+        'feat-desc':'Application web pour dématérialiser les audiences d\'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et OpenAI Whisper retranscrit l\'audience en temps réel. Six rôles distincts avec espaces dédiés. L\'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d\'état centralisée. Principale difficulté surmontée : découper le flux audio Jitsi en segments et les envoyer à l\'API Whisper pour une transcription quasi temps réel.',
+        'fh-t-1':'Visioconférence en direct','fh-s-1':'Jitsi Meet intégré pour les audiences à distance',
+        'fh-t-2':'Transcription IA','fh-s-2':'OpenAI Whisper retranscrit chaque audience en temps réel',
+        'fh-t-3':'OTP & notifications par email','fh-s-3':'Authentification, convocations et alertes envoyées par email',
+        'fh-t-4':'API REST · Laravel / MySQL','fh-s-4':'Backend structuré avec modélisation UML complète',
+        'fh-t-5':'Gestion des rôles','fh-s-5':'Juge, greffier, procureur, justiciable, avocat et admin, chacun avec son espace dédié',
+        'fh-t-6':'Dossiers d\'audience','fh-s-6':'Création, suivi et archivage de chaque affaire de bout en bout',
+        'cat-cahier':'Gestion · Finance','desc-cahier':'Appli pour suivre ce qu\'on doit et ce qu\'on nous doit. Simple, rapide, sans prise de tête.',
+        'cat-opht':'Santé · Clinique unique','desc-opht':'Version initiale : gestion des dossiers patients, consultations et rendez-vous pour une seule clinique.',
+        'cat-inond':'Environnement · Cartographie','desc-inond':'Signalement et cartographie des zones inondables au Sénégal.',
+        'cat-stock':'Business · Inventaire','desc-stock':'Gestion des stocks pour petites entreprises : entrées, sorties, alertes de rupture.',
+        'cat-esmt':'Éducation · Full Stack','desc-esmt':'Plateforme pour mon école : cours, notes et gestion de l\'administration.',
+        'cat-opht2':'Santé · Multi-sites','desc-opht2':'Version étendue : gestion multi-sites pour un ophtalmologue en libéral : agenda, consultations, ordonnances PDF, données chiffrées. Laravel 12 + Next.js.',
+        'sk-lang':'Langages','sk-db':'Bases de données','sk-tools':'Outils & DevOps','sk-sys':'Systèmes & Réseaux',
+        'cert-sub-1':'OSPF, VLAN, STP, réseaux sans fil','cert-sub-2':'Adressage IP, configuration d\'équipements Cisco',
+        'parc-form':'Formation','parc-exp':'Expérience & Engagement',
+        'tl-next':'À venir','tl-esp-desc':'Cours du soir',
+        'tl-licence':'Licence Télécommunications et Informatique',
+        'tl-esmt-org':'ESMT — Développement d\'Applications Réparties',
+        'tl-esmt-desc':'Cycle complet : front-end / back-end, bases de données, réseaux. PFE soutenu avec 16/20, mention très bien.',
+        'tl-samu':'Stagiaire — SAMU National','tl-samu-org':'Centre de Régulation (CRRA), Dakar',
+        'tl-samu-desc':'<ul><li>Analyse des outils numériques (Genesis, Patient Max)</li><li>Étude du circuit de traitement des appels d\'urgence</li><li>Support informatique : réseau, postes, logiciels</li></ul>',
+        'tl-vp':'Vice-présidente & Trésorière','tl-vp-org':'Amicale des étudiants de l\'ESMT',
+        'tl-vp-desc':'<ul><li>Pilotage logistique et événementiel de l\'amicale</li><li>Gestion financière et suivi budgétaire</li></ul>',
+        'contact-h':'Discutons de votre projet','contact-sub':'Disponible du lundi au vendredi en journée pour un stage en développement.',
+        'form-nom':'Nom','form-email':'Email','form-msg':'Message','form-submit':'Envoyer',
+        'ph-nom':'Votre nom','ph-msg':'Votre message…',
+        'c-phone':'Téléphone','c-copy':'Copier',
+        'foot-copy':'© 2026 Adama Ngom · Dakar, Sénégal'
+      },
+      en: {
+        'nav-apropos':'About','nav-projets':'Projects','nav-comp':'Skills','nav-parcours':'Career','nav-contact':'Contact',
+        'status':'Open to internship',
+        'hero-eyebrow':'Full Stack Developer · Senegal',
+        'hero-role':'B.Sc. Telecommunications & Computer Science · Distributed App Dev.',
+        'hero-bio':'I completed my Bachelor\'s at ESMT with a final-year project on remote judicial hearings. I code in React, Laravel and Python. I am preparing a Master\'s in AI & Big Data at ESP-UCAD and am seeking an internship.',
+        'info-form-k':'Education','info-form-v':'ESMT · B.Sc. 2026',
+        'info-next-k':'Next','info-next-v':'Master\'s in AI — ESP UCAD',
+        'info-dispo-k':'Available','info-dispo-v':'Mon–Fri, daytime',
+        'info-lang-k':'Languages','info-lang-v':'FR native · EN proficient · Wolof native',
+        'cta-proj':'View projects','cta-contact':'Get in touch','cta-cv':'Download CV',
+        'stat-pfe':'Final project · High honours','stat-gh':'GitHub repos','stat-cisco':'Cisco certs','stat-en':'Proficient',
+        'sec-00':'About','sec-01':'Selected projects','sec-02':'Technical skills','sec-03':'Education & Experience','sec-04':'Contact',
+        'apropos-lead':'I build digital tools that solve real problems. No demos.',
+        'apropos-p1':'My final-year project <em>Audience+</em> proves it: an application that lets Senegalese families resolve civil status matters remotely, without queuing, with real-time AI transcription.',
+        'apropos-p2':'Trained at ESMT in Distributed Application Development, I master the full stack: from REST API design to React interfaces, UML modelling, databases and networks. I am preparing a Master\'s in AI & Big Data at ESP-UCAD to go further in applied intelligence.',
+        'apropos-p3':'I am looking for an internship where I can learn fast, contribute meaningfully and work on products with real impact, in Africa or internationally.',
+        'ac-label':'What I\'m looking for','ac-title':'Internship · 3+ months','ac-item':'Full Stack Development',
+        'al-label':'Languages','lang-fr':'French','lang-fr-l':'Native','lang-nat':'Native','lang-en':'English','lang-en-l':'Proficient',
+        'feat-tag':'Final Year Project · Grade 16 / 20',
+        'feat-desc':'Web application to digitalise civil status hearings in Senegal. A judge chairs the session by video conference (Jitsi Meet), parties attend remotely, the clerk processes the file, and OpenAI Whisper transcribes the hearing in real time. Six distinct roles with dedicated interfaces. Authentication, summons and notifications all go by email (OTP included). The Laravel backend exposes a full REST API; the React frontend (Vite + Tailwind) is component-structured with centralised state management. Main challenge overcome: splitting the Jitsi audio stream into segments and sending them to the Whisper API for near-real-time transcription.',
+        'fh-t-1':'Live video conference','fh-s-1':'Jitsi Meet integrated for remote hearings',
+        'fh-t-2':'AI transcription','fh-s-2':'OpenAI Whisper transcribes each hearing in real time',
+        'fh-t-3':'OTP & email notifications','fh-s-3':'Authentication, summons and alerts sent by email',
+        'fh-t-4':'REST API · Laravel / MySQL','fh-s-4':'Structured backend with full UML modelling',
+        'fh-t-5':'Role management','fh-s-5':'Judge, clerk, prosecutor, litigant, lawyer and admin, each with their own dedicated space',
+        'fh-t-6':'Case files','fh-s-6':'Creation, tracking and archiving of each case end to end',
+        'cat-cahier':'Finance · Management','desc-cahier':'App to track what you owe and what you\'re owed. Simple, fast, no hassle.',
+        'cat-opht':'Health · Single clinic','desc-opht':'Initial version: patient records, consultations and appointments for a single clinic.',
+        'cat-inond':'Environment · Mapping','desc-inond':'Reporting and mapping of flood-prone areas in Senegal.',
+        'cat-stock':'Business · Inventory','desc-stock':'Stock management for small businesses: inflows, outflows, stock-out alerts.',
+        'cat-esmt':'Education · Full Stack','desc-esmt':'Platform for my school: courses, grades and administrative management.',
+        'cat-opht2':'Health · Multi-site','desc-opht2':'Extended version: multi-site management for a self-employed ophthalmologist: scheduling, consultations, PDF prescriptions, encrypted data. Laravel 12 + Next.js.',
+        'sk-lang':'Languages','sk-db':'Databases','sk-tools':'Tools & DevOps','sk-sys':'Systems & Networks',
+        'cert-sub-1':'OSPF, VLAN, STP, wireless networks','cert-sub-2':'IP addressing, Cisco device configuration',
+        'parc-form':'Education','parc-exp':'Experience & Involvement',
+        'tl-next':'Upcoming','tl-esp-desc':'Evening classes',
+        'tl-licence':'B.Sc. Telecommunications & Computer Science',
+        'tl-esmt-org':'ESMT — Distributed Application Development',
+        'tl-esmt-desc':'Full curriculum: front-end / back-end, databases, networks. Final project graded 16/20, high honours.',
+        'tl-samu':'Intern — SAMU National','tl-samu-org':'Regulation Centre (CRRA), Dakar',
+        'tl-samu-desc':'<ul><li>Analysis of digital tools (Genesis, Patient Max)</li><li>Study of the emergency call processing workflow</li><li>IT support: network, workstations, software</li></ul>',
+        'tl-vp':'Vice-president & Treasurer','tl-vp-org':'ESMT Student Association',
+        'tl-vp-desc':'<ul><li>Logistics and event management for the association</li><li>Financial management and budget tracking</li></ul>',
+        'contact-h':'Let\'s talk about your project','contact-sub':'Available Monday to Friday during the day for a development internship.',
+        'form-nom':'Name','form-email':'Email','form-msg':'Message','form-submit':'Send',
+        'ph-nom':'Your name','ph-msg':'Your message…',
+        'c-phone':'Phone','c-copy':'Copy',
+        'foot-copy':'© 2026 Adama Ngom · Dakar, Senegal'
+      }
+    };
+
+    const langBtn = document.getElementById('langBtn');
+    let lang = 'fr';
+
+    function applyLang(l) {
+      lang = l;
+      langBtn.textContent = l === 'fr' ? 'EN' : 'FR';
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = T[l][el.dataset.i18n];
+        if (v !== undefined) el.textContent = v;
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const v = T[l][el.dataset.i18nHtml];
+        if (v !== undefined) el.innerHTML = v;
+      });
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const v = T[l][el.dataset.i18nPh];
+        if (v !== undefined) el.placeholder = v;
+      });
+    }
+
+    langBtn.addEventListener('click', () => applyLang(lang === 'fr' ? 'en' : 'fr'));
+  })();
+
   const root = document.documentElement;
   const btn  = document.getElementById('themeBtn');
   const iS   = document.getElementById('iS');
