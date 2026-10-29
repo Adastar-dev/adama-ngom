@@ -1363,7 +1363,10 @@ footer {
       </div>
     </div>
     <div class="reveal">
-      <form id="contactForm" action="https://formspree.io/f/9fe08e9d-0b1b-4f6d-89fd-142ae22b1e48" method="POST">
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="9fe08e9d-0b1b-4f6d-89fd-142ae22b1e48">
+        <input type="hidden" name="subject" value="Nouveau message depuis le portfolio">
+        <input type="checkbox" name="botcheck" style="display:none">
         <div class="form-field">
           <label class="form-label" data-i18n="form-nom">Nom</label>
           <input type="text" name="name" required placeholder="Votre nom" data-i18n-ph="ph-nom">
@@ -1580,12 +1583,13 @@ footer {
       btn.textContent = 'Envoi…';
       try {
         const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-        if (res.ok) {
+        const data = await res.json();
+        if (data.success) {
           status.textContent = 'Message envoyé ! Je vous réponds sous 24h.';
           status.style.color = 'var(--gold)';
           form.reset();
         } else {
-          status.textContent = 'Erreur lors de l\'envoi. Écrivez-moi directement par email.';
+          status.textContent = data.message || 'Erreur lors de l\'envoi. Écrivez-moi directement par email.';
           status.style.color = '#c0392b';
         }
       } catch {
