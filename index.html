@@ -596,9 +596,7 @@ h1.name {
   transition: border-color .2s;
 }
 .sk-chip:hover { border-color: var(--gold); }
-.sk-dots { display: flex; gap: 3px; }
-.sk-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--border); }
-.sk-dot.on { background: var(--gold); }
+.sk-dots { display: none; }
 .sk-legend { display: flex; gap: 18px; margin-top: 14px; }
 .sk-legend-item { display: flex; align-items: center; gap: 6px; font-size: .65rem; color: var(--muted); letter-spacing: .08em; }
 .sk-legend-dots { display: flex; gap: 3px; }
@@ -968,7 +966,7 @@ footer {
     <div class="hero-cols ha4">
       <div>
         <p class="hero-role">Licence Informatique &amp; Télécoms · Dév. d'Applications Réparties</p>
-        <p class="hero-bio">J'ai fini ma licence à l'ESMT avec un PFE sur les audiences judiciaires à distance, noté 16/20. Je code en React, Laravel et Python. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD et cherche un stage.</p>
+        <p class="hero-bio">J'ai fini ma licence à l'ESMT avec un PFE sur les audiences judiciaires à distance, noté 16/20, mention très bien. Je code en React, Laravel et Python. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD et cherche un stage.</p>
       </div>
       <div class="info-list">
         <div class="info-pair"><span class="ikey">Formation</span><span class="ival">ESMT · Licence 2026</span></div>
@@ -996,7 +994,7 @@ footer {
   <div class="apropos-grid reveal">
     <div class="apropos-text">
       <p class="apropos-lead">Je construis des outils numériques qui résolvent de vrais problèmes — pas des démos.</p>
-      <p>Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d'état civil à distance, sans file d'attente, avec transcription IA en temps réel. Soutenu avec 16/20.</p>
+      <p>Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d'état civil à distance, sans file d'attente, avec transcription IA en temps réel. Soutenu avec 16/20, mention très bien.</p>
       <p>Formée à l'ESMT en Développement d'Applications Réparties, je maîtrise la chaîne complète — du design d'API REST à l'interface React, en passant par la modélisation UML, les bases de données et les réseaux. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD pour aller plus loin dans l'intelligence artificielle appliquée.</p>
       <p>Je cherche un stage où je peux apprendre vite, contribuer concrètement et travailler sur des produits qui ont un impact réel — en Afrique ou à l'international.</p>
     </div>
@@ -1023,7 +1021,7 @@ footer {
 <!-- STATS BAND -->
 <div class="stats-band reveal">
   <div class="stats-in">
-    <div class="s-item"><div class="s-n gold">16/20</div><div class="s-l">PFE soutenu</div></div>
+    <div class="s-item"><div class="s-n gold">16/20</div><div class="s-l">PFE · Mention très bien</div></div>
     <div class="s-item"><div class="s-n">19</div><div class="s-l">Dépôts GitHub</div></div>
     <div class="s-item"><div class="s-n">2</div><div class="s-l">Certif. Cisco</div></div>
     <div class="s-item"><div class="s-n">EN</div><div class="s-l">Bilingue</div></div>
@@ -1069,7 +1067,7 @@ footer {
           <rect x="200" y="160" width="40" height="8" rx="1" fill="rgba(255,255,255,.18)"/>
         </svg>
       </div>
-      <p class="feat-desc">PFE soutenu avec <strong>16/20</strong> — Application web pour dématérialiser les audiences d'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et OpenAI Whisper retranscrit l'audience en temps réel. Trois rôles distincts avec espaces dédiés. L'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d'état centralisée. Principale difficulté surmontée : synchroniser le flux audio Jitsi avec l'API Whisper pour obtenir une transcription sans décalage perceptible.</p>
+      <p class="feat-desc">PFE soutenu avec <strong>16/20</strong> — Application web pour dématérialiser les audiences d'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et OpenAI Whisper retranscrit l'audience en temps réel. Six rôles distincts avec espaces dédiés. L'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d'état centralisée. Principale difficulté surmontée : synchroniser le flux audio Jitsi avec l'API Whisper pour obtenir une transcription sans décalage perceptible.</p>
       <div class="feat-stack">
         <span class="f-tag hl">React</span>
         <span class="f-tag hl">Laravel</span>
@@ -1088,6 +1086,8 @@ footer {
       <div class="feat-hi"><div class="fh-num">— ii</div><div class="fh-t">Transcription IA</div><div class="fh-s">OpenAI Whisper retranscrit chaque audience en temps réel</div></div>
       <div class="feat-hi"><div class="fh-num">— iii</div><div class="fh-t">OTP & notifications par email</div><div class="fh-s">Authentification, convocations et alertes envoyées par email</div></div>
       <div class="feat-hi"><div class="fh-num">— iv</div><div class="fh-t">API REST · Laravel / MySQL</div><div class="fh-s">Backend structuré avec modélisation UML complète</div></div>
+      <div class="feat-hi"><div class="fh-num">— v</div><div class="fh-t">Gestion des rôles</div><div class="fh-s">Juge, greffier, procureur, justiciable, avocat et admin — chacun avec son espace dédié</div></div>
+      <div class="feat-hi"><div class="fh-num">— vi</div><div class="fh-t">Dossiers d'audience</div><div class="fh-s">Création, suivi et archivage de chaque affaire de bout en bout</div></div>
     </div>
   </div>
 
@@ -1112,7 +1112,7 @@ footer {
       </div>
       <div class="pc-body">
         <div class="pc-name">Ophtacare</div>
-        <div class="pc-cat">Healthcare · Web App</div>
+        <div class="pc-cat">Santé · Web App</div>
         <div class="pc-desc">Application pour une clinique ophtalmologique — dossiers patients, consultations, rendez-vous.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
@@ -1160,7 +1160,7 @@ footer {
       </div>
       <div class="pc-body">
         <div class="pc-name">OphtaCare Perso</div>
-        <div class="pc-cat">Healthcare · Multi-sites</div>
+        <div class="pc-cat">Santé · Multi-sites</div>
         <div class="pc-desc">Suivi de patients multi-sites pour ophtalmologue — agenda, consultations, ordonnances PDF, données cliniques chiffrées. Laravel 12 + Next.js, déployable sur Docker / Fly.io.</div>
       </div>
       <svg class="pc-arrow" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
@@ -1299,7 +1299,7 @@ footer {
           <div>
             <div class="tl-title">Licence Télécoms &amp; Informatique</div>
             <div class="tl-org">ESMT — Développement d'Applications Réparties</div>
-            <div class="tl-desc">Cycle complet : front-end / back-end, bases de données, réseaux. PFE soutenu avec 16/20.</div>
+            <div class="tl-desc">Cycle complet : front-end / back-end, bases de données, réseaux. PFE soutenu avec 16/20, mention très bien.</div>
           </div>
         </div>
       </div>
