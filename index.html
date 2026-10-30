@@ -480,6 +480,12 @@ h1.name {
   border-bottom: 1px solid var(--border);
 }
 .feat-hi:last-child { border-bottom: none; }
+.feat-metrics { display:flex; flex-wrap:wrap; gap:20px; margin-bottom:18px; }
+.fm-item { font-size:.78rem; color:var(--muted); }
+.fm-item strong { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--gold); margin-right:3px; }
+.pc-stack { display:flex; flex-wrap:wrap; gap:5px; margin:7px 0 5px; }
+.pc-stag { font-size:.58rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); border:1px solid var(--border); padding:2px 7px; }
+.data-note { font-size:.62rem; color:var(--muted); font-style:italic; margin-top:5px; opacity:.75; }
 .fh-num {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
@@ -1050,6 +1056,12 @@ footer {
     <div>
       <p class="feat-tag" data-i18n="feat-tag">Projet de Fin d'Études · Note 16 / 20</p>
       <h3 class="feat-name">Audience+</h3>
+      <div class="feat-metrics">
+        <span class="fm-item"><strong>170</strong> tests automatisés</span>
+        <span class="fm-item"><strong>6</strong> rôles distincts</span>
+        <span class="fm-item">Backend dockerisé</span>
+        <span class="fm-item">PV scellés SHA-256</span>
+      </div>
       <div class="feat-gallery">
         <div class="fg-tabs">
           <button class="fg-tab active" data-idx="0">Connexion</button>
@@ -1085,12 +1097,12 @@ footer {
     </div>
 
     <div class="feat-right">
-      <div class="feat-hi"><div class="fh-num">i</div><div class="fh-t" data-i18n="fh-t-1">Visioconférence en direct</div><div class="fh-s" data-i18n="fh-s-1">Jitsi Meet auto-hébergé, accès par jeton JWT</div></div>
-      <div class="feat-hi"><div class="fh-num">ii</div><div class="fh-t" data-i18n="fh-t-2">Transcription IA</div><div class="fh-s" data-i18n="fh-s-2">Whisper transcrit l'enregistrement pour préparer le procès-verbal</div></div>
-      <div class="feat-hi"><div class="fh-num">iii</div><div class="fh-t" data-i18n="fh-t-3">OTP & notifications par email</div><div class="fh-s" data-i18n="fh-s-3">Authentification, convocations et alertes envoyées par email</div></div>
-      <div class="feat-hi"><div class="fh-num">iv</div><div class="fh-t" data-i18n="fh-t-4">API REST · Laravel / MySQL</div><div class="fh-s" data-i18n="fh-s-4">Backend structuré avec modélisation UML complète</div></div>
-      <div class="feat-hi"><div class="fh-num">v</div><div class="fh-t" data-i18n="fh-t-5">Gestion des rôles</div><div class="fh-s" data-i18n="fh-s-5">Juge, greffier, procureur, justiciable, avocat et admin, chacun avec son espace dédié</div></div>
-      <div class="feat-hi"><div class="fh-num">vi</div><div class="fh-t" data-i18n="fh-t-6">Dossiers d'audience</div><div class="fh-s" data-i18n="fh-s-6">Création, suivi et archivage de chaque affaire de bout en bout</div></div>
+      <div class="feat-hi"><div class="fh-num">i</div><div class="fh-t" data-i18n="fh-t-1">Visioconférence en direct</div><div class="fh-s" data-i18n="fh-s-1">Jitsi auto-hébergé — pas de cloud tiers pour garder les données judiciaires sous contrôle</div></div>
+      <div class="feat-hi"><div class="fh-num">ii</div><div class="fh-t" data-i18n="fh-t-2">Intégrité de l'audience</div><div class="fh-s" data-i18n="fh-s-2">Salle d'attente OTP : aucune partie n'entre avant le juge, chaque identité vérifiée</div></div>
+      <div class="feat-hi"><div class="fh-num">iii</div><div class="fh-t" data-i18n="fh-t-3">Transcription IA</div><div class="fh-s" data-i18n="fh-s-3">Whisper (Groq API) transcrit l'enregistrement pour préparer le procès-verbal</div></div>
+      <div class="feat-hi"><div class="fh-num">iv</div><div class="fh-t" data-i18n="fh-t-4">PV scellés SHA-256</div><div class="fh-s" data-i18n="fh-s-4">Preuve d'intégrité inviolable pour la chaîne judiciaire</div></div>
+      <div class="feat-hi"><div class="fh-num">v</div><div class="fh-t" data-i18n="fh-t-5">6 rôles · 170 tests</div><div class="fh-s" data-i18n="fh-s-5">Juge, greffier, procureur, justiciable, avocat, admin — backend dockerisé, couverture de tests complète</div></div>
+      <div class="feat-hi"><div class="fh-num">vi</div><div class="fh-t" data-i18n="fh-t-6">API REST · Laravel / MySQL</div><div class="fh-s" data-i18n="fh-s-6">Backend structuré avec modélisation UML complète, frontend React (Vite + Tailwind)</div></div>
     </div>
   </div>
 
@@ -1155,6 +1167,8 @@ footer {
         <div class="pc-name">OphtaCare</div>
         <div class="pc-cat" data-i18n="cat-opht">Santé · Clinique unique</div>
         <div class="pc-desc" data-i18n="desc-opht">Version initiale : gestion des dossiers patients, consultations et rendez-vous pour une seule clinique.</div>
+        <div class="pc-stack"><span class="pc-stag">Laravel</span><span class="pc-stag">React</span><span class="pc-stag">MySQL</span></div>
+        <p class="data-note" data-i18n="data-note">Données fictives — aucune donnée patient réelle</p>
         <div class="pc-links"><a href="https://github.com/Adastar-dev/ophtacare" target="_blank" rel="noopener"><span data-i18n="pc-code">Code</span></a></div>
       </div>
     </div>
@@ -1185,6 +1199,7 @@ footer {
         <div class="pc-name">Inondations App</div>
         <div class="pc-cat" data-i18n="cat-inond">Environnement · Cartographie</div>
         <div class="pc-desc" data-i18n="desc-inond">Signalement et cartographie des zones inondables au Sénégal.</div>
+        <div class="pc-stack"><span class="pc-stag">Flutter</span><span class="pc-stag">Firebase</span><span class="pc-stag">OpenStreetMap</span></div>
         <div class="pc-links"><a href="https://github.com/Adastar-dev/inondations_app" target="_blank" rel="noopener"><span data-i18n="pc-code">Code</span></a></div>
       </div>
     </div>
@@ -1246,6 +1261,7 @@ footer {
         <div class="pc-name">OphtaCare Perso</div>
         <div class="pc-cat" data-i18n="cat-opht2">Santé · Multi-sites</div>
         <div class="pc-desc" data-i18n="desc-opht2">Version étendue : gestion multi-sites pour un ophtalmologue en libéral : agenda, consultations, ordonnances PDF, données chiffrées. Laravel 12 + Next.js.</div>
+        <p class="data-note" data-i18n="data-note">Données fictives — aucune donnée patient réelle</p>
         <div class="pc-links"><a href="https://ophtacare.onrender.com/" class="pc-demo" target="_blank" rel="noopener"><span data-i18n="pc-demo">Démo en ligne</span> →</a><a href="https://github.com/Adastar-dev/ophtacare_perso" target="_blank" rel="noopener"><span data-i18n="pc-code">Code</span></a></div>
       </div>
     </div>
@@ -1515,12 +1531,12 @@ footer {
         'al-label':'Langues','lang-fr':'Français','lang-fr-l':'Natif','lang-nat':'Natif','lang-en':'Anglais','lang-en-l':'Courant',
         'feat-tag':'Projet de Fin d\'Études · Note 16 / 20',
         'feat-desc':'Application web pour dématérialiser les audiences d\'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et l\'enregistrement de l\'audience est transcrit par Whisper (via l\'API Groq) pour préparer le procès-verbal. Six rôles distincts avec espaces dédiés. L\'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d\'état centralisée. Principale difficulté surmontée : sécuriser la salle d\'audience Jitsi auto-hébergée, avec un accès par jeton JWT, une salle d\'attente où chaque partie confirme son identité par code OTP, et aucune entrée avant le juge.',
-        'fh-t-1':'Visioconférence en direct','fh-s-1':'Jitsi Meet auto-hébergé, accès par jeton JWT',
-        'fh-t-2':'Transcription IA','fh-s-2':'Whisper transcrit l\'enregistrement pour préparer le procès-verbal',
-        'fh-t-3':'OTP & notifications par email','fh-s-3':'Authentification, convocations et alertes envoyées par email',
-        'fh-t-4':'API REST · Laravel / MySQL','fh-s-4':'Backend structuré avec modélisation UML complète',
-        'fh-t-5':'Gestion des rôles','fh-s-5':'Juge, greffier, procureur, justiciable, avocat et admin, chacun avec son espace dédié',
-        'fh-t-6':'Dossiers d\'audience','fh-s-6':'Création, suivi et archivage de chaque affaire de bout en bout',
+        'fh-t-1':'Visioconférence en direct','fh-s-1':'Jitsi auto-hébergé — pas de cloud tiers pour garder les données judiciaires sous contrôle',
+        'fh-t-2':'Intégrité de l\'audience','fh-s-2':'Salle d\'attente OTP : aucune partie n\'entre avant le juge, chaque identité vérifiée',
+        'fh-t-3':'Transcription IA','fh-s-3':'Whisper (Groq API) transcrit l\'enregistrement pour préparer le procès-verbal',
+        'fh-t-4':'PV scellés SHA-256','fh-s-4':'Preuve d\'intégrité inviolable pour la chaîne judiciaire',
+        'fh-t-5':'6 rôles · 170 tests','fh-s-5':'Juge, greffier, procureur, justiciable, avocat, admin — backend dockerisé, couverture de tests complète',
+        'fh-t-6':'API REST · Laravel / MySQL','fh-s-6':'Backend structuré avec modélisation UML complète, frontend React (Vite + Tailwind)',
         'cat-cahier':'Gestion · Finance','desc-cahier':'Appli pour suivre ce qu\'on doit et ce qu\'on nous doit. Simple, rapide, sans prise de tête.',
         'cat-opht':'Santé · Clinique unique','desc-opht':'Version initiale : gestion des dossiers patients, consultations et rendez-vous pour une seule clinique.',
         'cat-inond':'Environnement · Cartographie','desc-inond':'Signalement et cartographie des zones inondables au Sénégal.',
@@ -1541,7 +1557,7 @@ footer {
         'form-nom':'Nom','form-email':'Email','form-msg':'Message','form-submit':'Envoyer',
         'ph-nom':'Votre nom','ph-msg':'Votre message…',
         'c-phone':'Téléphone','c-copy':'Copier',
-        'foot-copy':'© 2026 Adama Ngom · Dakar, Sénégal',
+        'data-note':'Données fictives — aucune donnée patient réelle','foot-copy':'© 2026 Adama Ngom · Dakar, Sénégal',
         'cta-gh':'Voir sur GitHub','pc-demo':'Démo en ligne','pc-code':'Code','tl-master':'Master IA & Big Data','tl-esp-org':'École Supérieure Polytechnique (ESP) — UCAD',
         'copied':'Copié','sending':'Envoi…','sent':'Message envoyé ! Je vous réponds sous 24h.',
         'err-send':'Erreur lors de l\'envoi. Écrivez-moi directement par email.','err-net':'Erreur réseau. Réessayez plus tard.'
@@ -1567,12 +1583,12 @@ footer {
         'al-label':'Languages','lang-fr':'French','lang-fr-l':'Native','lang-nat':'Native','lang-en':'English','lang-en-l':'Proficient',
         'feat-tag':'Final Year Project · Grade 16 / 20',
         'feat-desc':'Web application to digitalise civil status hearings in Senegal. A judge chairs the session by video conference (Jitsi Meet), parties attend remotely, the clerk processes the file, and the hearing recording is transcribed by Whisper (via the Groq API) to draft the official record. Six distinct roles with dedicated interfaces. Authentication, summons and notifications all go by email (OTP included). The Laravel backend exposes a full REST API; the React frontend (Vite + Tailwind) is component-structured with centralised state management. Main challenge overcome: securing the self-hosted Jitsi hearing room, with JWT-based access, a waiting room where each party confirms their identity with an OTP code, and no one admitted before the judge.',
-        'fh-t-1':'Live video conference','fh-s-1':'Self-hosted Jitsi Meet with JWT access',
-        'fh-t-2':'AI transcription','fh-s-2':'Whisper transcribes the recording to draft the official record',
-        'fh-t-3':'OTP & email notifications','fh-s-3':'Authentication, summons and alerts sent by email',
-        'fh-t-4':'REST API · Laravel / MySQL','fh-s-4':'Structured backend with full UML modelling',
-        'fh-t-5':'Role management','fh-s-5':'Judge, clerk, prosecutor, litigant, lawyer and admin, each with their own dedicated space',
-        'fh-t-6':'Case files','fh-s-6':'Creation, tracking and archiving of each case end to end',
+        'fh-t-1':'Live video conference','fh-s-1':'Self-hosted Jitsi (no third-party cloud) to keep judicial data under control',
+        'fh-t-2':'Hearing integrity','fh-s-2':'OTP waiting room: no party admitted before the judge, every identity verified',
+        'fh-t-3':'AI transcription','fh-s-3':'Whisper (Groq API) transcribes the recording to draft the official record',
+        'fh-t-4':'SHA-256 sealed records','fh-s-4':'Tamper-proof integrity proof for the judicial chain',
+        'fh-t-5':'6 roles · 170 tests','fh-s-5':'Judge, clerk, prosecutor, litigant, lawyer, admin — Dockerised backend, full test coverage',
+        'fh-t-6':'REST API · Laravel / MySQL','fh-s-6':'Structured backend with full UML modelling, React frontend (Vite + Tailwind)',
         'cat-cahier':'Finance · Management','desc-cahier':'App to track what you owe and what you\'re owed. Simple, fast, no hassle.',
         'cat-opht':'Health · Single clinic','desc-opht':'Initial version: patient records, consultations and appointments for a single clinic.',
         'cat-inond':'Environment · Mapping','desc-inond':'Reporting and mapping of flood-prone areas in Senegal.',
@@ -1593,7 +1609,7 @@ footer {
         'form-nom':'Name','form-email':'Email','form-msg':'Message','form-submit':'Send',
         'ph-nom':'Your name','ph-msg':'Your message…',
         'c-phone':'Phone','c-copy':'Copy',
-        'foot-copy':'© 2026 Adama Ngom · Dakar, Senegal',
+        'data-note':'Fictional data — no real patient data used','foot-copy':'© 2026 Adama Ngom · Dakar, Senegal',
         'cta-gh':'View on GitHub','pc-demo':'Live demo','pc-code':'Code','tl-master':'Master\'s in AI & Big Data','tl-esp-org':'École Supérieure Polytechnique (ESP) — UCAD',
         'copied':'Copied','sending':'Sending…','sent':'Message sent! I will reply within 24 hours.',
         'err-send':'Sending failed. Please email me directly.','err-net':'Network error. Please try again later.'
