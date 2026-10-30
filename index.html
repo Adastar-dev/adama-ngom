@@ -937,6 +937,19 @@ footer {
   flex-wrap: wrap;
 }
 .foot-copy { font-size: .68rem; letter-spacing: .06em; color: var(--muted); }
+/* ── Où je vais ─────────────────────────────────────────────── */
+.goals { background: var(--accent); padding: 100px 0; }
+.goals-in { max-width: 840px; margin: 0 auto; padding: 0 var(--side); }
+.goals-ey { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.goals-ey::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+.goals-ey span { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.goals-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700; font-style: italic; color: #f0ede8; margin: 0 0 48px; line-height: 1.1; }
+.goal-item { border-top: 1px solid rgba(255,255,255,.12); padding: 30px 0; display: flex; gap: 28px; align-items: baseline; }
+.goal-num { font-family: 'Cormorant Garamond', serif; font-size: .9rem; color: var(--gold);
+  opacity: .8; min-width: 28px; flex-shrink: 0; }
+.goal-text { font-size: 1.05rem; color: rgba(240,237,232,.88); line-height: 1.65; }
+
 </style>
 </head>
 
@@ -987,7 +1000,7 @@ footer {
       </div>
       <div class="info-list">
         <div class="info-pair"><span class="ikey" data-i18n="info-form-k">Formation</span><span class="ival" data-i18n="info-form-v">ESMT · Licence 2026</span></div>
-        <div class="info-pair"><span class="ikey" data-i18n="info-next-k">Projet</span><span class="ival" data-i18n="info-next-v">M.Sc. IA &amp; Big Data — ESP UCAD</span></div>
+        <div class="info-pair"><span class="ikey" data-i18n="info-next-k">Projet</span><span class="ival" data-i18n="info-next-v">Master IA &amp; Big Data — ESP UCAD</span></div>
         <div class="info-pair"><span class="ikey" data-i18n="info-dispo-k">Disponible</span><span class="ival" data-i18n="info-dispo-v">Lun–Ven, journée</span></div>
         <div class="info-pair"><span class="ikey" data-i18n="info-lang-k">Langues</span><span class="ival" data-i18n="info-lang-v">FR · EN courant · Wolof</span></div>
       </div>
@@ -1285,6 +1298,7 @@ footer {
         <div class="sk-chips">
           <span class="sk-chip">Python</span>
           <span class="sk-chip">JavaScript</span>
+          <span class="sk-chip">TypeScript</span>
           <span class="sk-chip">HTML / CSS</span>
           <span class="sk-chip">SQL</span>
           <span class="sk-chip">PHP</span>
@@ -1303,6 +1317,7 @@ footer {
           <span class="sk-chip">Django</span>
           <span class="sk-chip">Angular</span>
           <span class="sk-chip">Flutter</span>
+          <span class="sk-chip">Dart</span>
           <span class="sk-chip">Vite</span>
           <span class="sk-chip">WordPress</span>
         </div>
@@ -1385,7 +1400,7 @@ footer {
         <div class="tl-item">
           <span class="tl-year" data-i18n="tl-next">À venir</span>
           <div>
-            <div class="tl-title" data-i18n="tl-master">M.Sc. IA &amp; Big Data <span style="font-size:.75em;opacity:.65">(projet)</span></div>
+            <div class="tl-title" data-i18n="tl-master">Master IA &amp; Big Data <span style="font-size:.75em;opacity:.65">(projet)</span></div>
             <div class="tl-org" data-i18n="tl-esp-org">École Supérieure Polytechnique (ESP) — UCAD</div>
             <div class="tl-desc" data-i18n="tl-esp-desc">Cours du soir</div>
           </div>
@@ -1432,6 +1447,27 @@ footer {
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- OÙ JE VAIS -->
+<section id="goals" class="goals">
+  <div class="goals-in">
+    <div class="goals-ey reveal"><span data-i18n="goals-ey">OÙ JE VAIS</span></div>
+    <h2 class="goals-h reveal" data-i18n="goals-h">La suite, choisie.</h2>
+    <div class="goal-item reveal">
+      <span class="goal-num">01</span>
+      <p class="goal-text" data-i18n="goal-1">Décrocher le Master IA &amp; Big Data à l’ESP-UCAD et concevoir des systèmes intelligents au service de la justice et de la santé en Afrique.</p>
+    </div>
+    <div class="goal-item reveal">
+      <span class="goal-num">02</span>
+      <p class="goal-text" data-i18n="goal-2">Proposer Audience+ au ministère de la Justice du Sénégal pour un projet pilote dans un tribunal, puis le faire évoluer avec les retours du terrain : transcription en direct pendant l’audience et API ouverte pour les greffes.</p>
+    </div>
+    <div class="goal-item reveal">
+      <span class="goal-num">03</span>
+      <p class="goal-text" data-i18n="goal-3">Maîtriser le machine learning appliqué et construire des modèles entraînés sur des données réelles — au service de décisions concrètes, pas juste de démos.</p>
     </div>
   </div>
 </section>
@@ -1517,7 +1553,7 @@ footer {
         'hero-role':'Licence Télécommunications et Informatique · Dév. d\'Applications Réparties',
         'hero-bio':'J\'ai fini ma licence à l\'ESMT avec un PFE sur les audiences judiciaires à distance. Je code en React, Laravel et Python. Je souhaite poursuivre en Intelligence artificielle & Big Data et cherche un stage.',
         'info-form-k':'Formation','info-form-v':'ESMT · Licence 2026',
-        'info-next-k':'Projet','info-next-v':'M.Sc. IA &amp; Big Data — ESP UCAD',
+        'info-next-k':'Projet','info-next-v':'Master IA & Big Data — ESP UCAD',
         'info-dispo-k':'Disponible','info-dispo-v':'Lun–Ven, journée',
         'info-lang-k':'Langues','info-lang-v':'FR · EN courant · Wolof',
         'cta-proj':'Voir les projets','cta-contact':'Me contacter','cta-cv':'Télécharger CV',
@@ -1557,8 +1593,8 @@ footer {
         'form-nom':'Nom','form-email':'Email','form-msg':'Message','form-submit':'Envoyer',
         'ph-nom':'Votre nom','ph-msg':'Votre message…',
         'c-phone':'Téléphone','c-copy':'Copier',
-        'data-note':'Données fictives — aucune donnée patient réelle','foot-copy':'© 2026 Adama Ngom · Dakar, Sénégal',
-        'cta-gh':'Voir sur GitHub','pc-demo':'Démo en ligne','pc-code':'Code','tl-master':'M.Sc. IA & Big Data (projet)','tl-esp-org':'École Supérieure Polytechnique (ESP) — UCAD',
+        'data-note':'Données fictives — aucune donnée patient réelle','goals-ey':'OÙ JE VAIS','goals-h':'La suite, choisie.','goal-1':'Décrocher le Master IA & Big Data à l’ESP-UCAD et concevoir des systèmes intelligents au service de la justice et de la santé en Afrique.','goal-2':'Proposer Audience+ au ministère de la Justice du Sénégal pour un projet pilote dans un tribunal, puis le faire évoluer avec les retours du terrain : transcription en direct pendant l’audience et API ouverte pour les greffes.','goal-3':'Maîtriser le machine learning appliqué et construire des modèles entraînés sur des données réelles — au service de décisions concrètes.','foot-copy':'© 2026 Adama Ngom · Dakar, Sénégal',
+        'cta-gh':'Voir sur GitHub','pc-demo':'Démo en ligne','pc-code':'Code','tl-master':'Master IA & Big Data (projet)','tl-esp-org':'École Supérieure Polytechnique (ESP) — UCAD',
         'copied':'Copié','sending':'Envoi…','sent':'Message envoyé ! Je vous réponds sous 24h.',
         'err-send':'Erreur lors de l\'envoi. Écrivez-moi directement par email.','err-net':'Erreur réseau. Réessayez plus tard.'
       },
@@ -1567,9 +1603,9 @@ footer {
         'status':'Open to internship',
         'hero-eyebrow':'Full Stack Developer · Senegal',
         'hero-role':'B.Sc. Telecommunications & Computer Science · Distributed App Dev.',
-        'hero-bio':'I completed my Bachelor\'s at ESMT with a final-year project on remote judicial hearings. I code in React, Laravel and Python. I am preparing a Master\'s in AI & Big Data at ESP-UCAD and am seeking an internship.',
+        'hero-bio':'I completed my Bachelor\'s at ESMT with a final-year project on remote judicial hearings. I code in React, Laravel and Python. I plan to continue with an M.Sc. in AI & Big Data and am seeking an internship.',
         'info-form-k':'Education','info-form-v':'ESMT · B.Sc. 2026',
-        'info-next-k':'Goal','info-next-v':'M.Sc. in AI &amp; Big Data — ESP UCAD',
+        'info-next-k':'Goal','info-next-v':'M.Sc. in AI & Big Data — ESP UCAD',
         'info-dispo-k':'Available','info-dispo-v':'Mon–Fri, daytime',
         'info-lang-k':'Languages','info-lang-v':'FR native · EN proficient · Wolof native',
         'cta-proj':'View projects','cta-contact':'Get in touch','cta-cv':'Download CV',
@@ -1577,7 +1613,7 @@ footer {
         'sec-00':'About','sec-01':'Selected projects','sec-02':'Technical skills','sec-03':'Education & Experience','sec-04':'Contact',
         'apropos-lead':'I build digital tools that solve real problems. No demos.',
         'apropos-p1':'My final-year project <em>Audience+</em> proves it: an application that lets Senegalese families resolve civil status matters remotely, without queuing, with AI transcription that drafts the hearing record.',
-        'apropos-p2':'Trained at ESMT in Distributed Application Development, I master the full stack: from REST API design to React interfaces, UML modelling, databases and networks. I am preparing a Master\'s in AI & Big Data at ESP-UCAD to go further in applied AI.',
+        'apropos-p2':'Trained at ESMT in Distributed Application Development, I master the full stack: from REST API design to React interfaces, UML modelling, databases and networks. My next step: an M.Sc. in AI & Big Data at ESP-UCAD, to go further in applied AI.',
         'apropos-p3':'I am looking for an internship where I can learn fast, contribute meaningfully and work on products with real impact, in Africa or internationally.',
         'ac-label':'What I\'m looking for','ac-title':'Internship · 3+ months','ac-item':'Full Stack Development',
         'al-label':'Languages','lang-fr':'French','lang-fr-l':'Native','lang-nat':'Native','lang-en':'English','lang-en-l':'Proficient',
@@ -1609,8 +1645,8 @@ footer {
         'form-nom':'Name','form-email':'Email','form-msg':'Message','form-submit':'Send',
         'ph-nom':'Your name','ph-msg':'Your message…',
         'c-phone':'Phone','c-copy':'Copy',
-        'data-note':'Fictional data — no real patient data used','foot-copy':'© 2026 Adama Ngom · Dakar, Senegal',
-        'cta-gh':'View on GitHub','pc-demo':'Live demo','pc-code':'Code','tl-master':'Master\'s in AI & Big Data','tl-esp-org':'École Supérieure Polytechnique (ESP) — UCAD',
+        'data-note':'Fictional data — no real patient data used','goals-ey':'WHERE I\'M HEADED','goals-h':'The next chapter, chosen.','goal-1':'Earn a M.Sc. in AI & Big Data at ESP-UCAD and build intelligent systems for justice and healthcare across Africa.','goal-2':'Present Audience+ to Senegal’s Ministry of Justice for a pilot in one court, then improve it with field feedback: live transcription during hearings and an open API for court registries.','goal-3':'Master applied machine learning and build models trained on real data — to drive real decisions, not just demos.','foot-copy':'© 2026 Adama Ngom · Dakar, Senegal',
+        'cta-gh':'View on GitHub','pc-demo':'Live demo','pc-code':'Code','tl-master':'M.Sc. in AI & Big Data (planned)','tl-esp-org':'École Supérieure Polytechnique (ESP) — UCAD',
         'copied':'Copied','sending':'Sending…','sent':'Message sent! I will reply within 24 hours.',
         'err-send':'Sending failed. Please email me directly.','err-net':'Network error. Please try again later.'
       }
