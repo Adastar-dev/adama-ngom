@@ -503,7 +503,7 @@ h1.name {
 .fg-tab { flex: 1; padding: 9px 8px; font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; font-family: inherit; background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; color: var(--muted); cursor: pointer; transition: color .12s, border-color .12s; }
 .fg-tab.active { color: var(--fg); border-bottom-color: var(--accent); }
 .fg-screen { position: relative; }
-.fg-screen img { display: block; width: 100%; height: auto; }
+.fg-screen img { display: block; width: 100%; height: auto; cursor: zoom-in; }
 
 /* ── CARD GALLERY (project cards) ── */
 .pc-gallery { border-radius: 4px 4px 0 0; overflow: hidden; border-bottom: 1px solid var(--border); }
@@ -513,7 +513,7 @@ h1.name {
 .pg-screen img { display: block; width: 100%; height: 155px; object-fit: cover; object-position: top center; cursor: zoom-in; }
 #lb-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 9999; align-items: center; justify-content: center; }
 #lb-overlay.open { display: flex; }
-#lb-overlay img { max-width: 92vw; max-height: 88vh; border-radius: 6px; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,.6); }
+#lb-overlay img { width: 90vw; max-height: 88vh; border-radius: 6px; object-fit: contain; box-shadow: 0 8px 40px rgba(0,0,0,.6); display: block; }
 #lb-close { position: absolute; top: 16px; right: 20px; font-size: 2rem; line-height: 1; color: #fff; cursor: pointer; opacity: .8; background: none; border: none; font-family: inherit; }
 
 /* ── PROJECT CARDS ── */
@@ -1939,7 +1939,7 @@ footer {
   ov.addEventListener('click',function(e){if(e.target===ov)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   document.addEventListener('click',function(e){
-    var img=e.target.closest('.pg-screen img');
+    var img=e.target.closest('.pg-screen img, #fg-img');
     if(img&&img.src&&img.src.indexOf('gif;base64,R0lGODlh')===-1){
       e.stopPropagation();open(img.src);
     }
