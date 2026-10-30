@@ -1005,7 +1005,7 @@ footer {
   <div class="apropos-grid reveal">
     <div class="apropos-text">
       <p class="apropos-lead" data-i18n="apropos-lead">Je construis des outils numériques qui résolvent de vrais problèmes. Pas des démos.</p>
-      <p data-i18n-html="apropos-p1">Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d'état civil à distance, sans file d'attente, avec transcription IA quasi temps réel.</p>
+      <p data-i18n-html="apropos-p1">Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d'état civil à distance, sans file d'attente, avec une IA qui transcrit l'audience pour préparer le procès-verbal.</p>
       <p data-i18n="apropos-p2">Formée à l'ESMT en Développement d'Applications Réparties, je maîtrise la chaîne complète : du design d'API REST à l'interface React, en passant par la modélisation UML, les bases de données et les réseaux. Je prépare un Master IA &amp; Big Data à l'ESP-UCAD pour aller plus loin dans l'intelligence artificielle appliquée.</p>
       <p data-i18n="apropos-p3">Je cherche un stage où je peux apprendre vite, contribuer concrètement et travailler sur des produits qui ont un impact réel, en Afrique ou à l'international.</p>
     </div>
@@ -1070,11 +1070,11 @@ footer {
           });});
         })();</script>
       </div>
-      <p class="feat-desc" data-i18n="feat-desc">Application web pour dématérialiser les audiences d'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et OpenAI Whisper retranscrit l'audience au fil de la séance. Six rôles distincts avec espaces dédiés. L'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d'état centralisée. Principale difficulté surmontée : découper le flux audio Jitsi en segments et les envoyer à l'API Whisper pour une transcription quasi temps réel.</p>
+      <p class="feat-desc" data-i18n="feat-desc">Application web pour dématérialiser les audiences d'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et l'enregistrement de l'audience est transcrit par Whisper (via l'API Groq) pour préparer le procès-verbal. Six rôles distincts avec espaces dédiés. L'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d'état centralisée. Principale difficulté surmontée : sécuriser la salle d'audience Jitsi auto-hébergée, avec un accès par jeton JWT, une salle d'attente où chaque partie confirme son identité par code OTP, et aucune entrée avant le juge.</p>
       <div class="feat-stack">
         <span class="f-tag hl">React</span>
         <span class="f-tag hl">Laravel</span>
-        <span class="f-tag hl">OpenAI Whisper</span>
+        <span class="f-tag hl">Whisper (Groq)</span>
         <span class="f-tag">Vite</span>
         <span class="f-tag">Tailwind</span>
         <span class="f-tag">MySQL</span>
@@ -1085,8 +1085,8 @@ footer {
     </div>
 
     <div class="feat-right">
-      <div class="feat-hi"><div class="fh-num">i</div><div class="fh-t" data-i18n="fh-t-1">Visioconférence en direct</div><div class="fh-s" data-i18n="fh-s-1">Jitsi Meet intégré pour les audiences à distance</div></div>
-      <div class="feat-hi"><div class="fh-num">ii</div><div class="fh-t" data-i18n="fh-t-2">Transcription IA</div><div class="fh-s" data-i18n="fh-s-2">OpenAI Whisper retranscrit chaque audience en quasi temps réel</div></div>
+      <div class="feat-hi"><div class="fh-num">i</div><div class="fh-t" data-i18n="fh-t-1">Visioconférence en direct</div><div class="fh-s" data-i18n="fh-s-1">Jitsi Meet auto-hébergé, accès par jeton JWT</div></div>
+      <div class="feat-hi"><div class="fh-num">ii</div><div class="fh-t" data-i18n="fh-t-2">Transcription IA</div><div class="fh-s" data-i18n="fh-s-2">Whisper transcrit l'enregistrement pour préparer le procès-verbal</div></div>
       <div class="feat-hi"><div class="fh-num">iii</div><div class="fh-t" data-i18n="fh-t-3">OTP & notifications par email</div><div class="fh-s" data-i18n="fh-s-3">Authentification, convocations et alertes envoyées par email</div></div>
       <div class="feat-hi"><div class="fh-num">iv</div><div class="fh-t" data-i18n="fh-t-4">API REST · Laravel / MySQL</div><div class="fh-s" data-i18n="fh-s-4">Backend structuré avec modélisation UML complète</div></div>
       <div class="feat-hi"><div class="fh-num">v</div><div class="fh-t" data-i18n="fh-t-5">Gestion des rôles</div><div class="fh-s" data-i18n="fh-s-5">Juge, greffier, procureur, justiciable, avocat et admin, chacun avec son espace dédié</div></div>
@@ -1508,15 +1508,15 @@ footer {
         'stat-pfe':'PFE · Mention très bien','stat-gh':'Dépôts GitHub','stat-cisco':'Certif. Cisco','stat-en':'Courant',
         'sec-00':'À propos','sec-01':'Projets sélectionnés','sec-02':'Compétences techniques','sec-03':'Formation & Expérience','sec-04':'Contact',
         'apropos-lead':'Je construis des outils numériques qui résolvent de vrais problèmes. Pas des démos.',
-        'apropos-p1':'Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d\'état civil à distance, sans file d\'attente, avec transcription IA quasi temps réel.',
+        'apropos-p1':'Mon PFE <em>Audience+</em> en est la preuve : une application qui permet à des familles sénégalaises de régler leurs situations d\'état civil à distance, sans file d\'attente, avec une IA qui transcrit l\'audience pour préparer le procès-verbal.',
         'apropos-p2':'Formée à l\'ESMT en Développement d\'Applications Réparties, je maîtrise la chaîne complète : du design d\'API REST à l\'interface React, en passant par la modélisation UML, les bases de données et les réseaux. Je prépare un Master IA & Big Data à l\'ESP-UCAD pour aller plus loin dans l\'intelligence artificielle appliquée.',
         'apropos-p3':'Je cherche un stage où je peux apprendre vite, contribuer concrètement et travailler sur des produits qui ont un impact réel, en Afrique ou à l\'international.',
         'ac-label':'Ce que je recherche','ac-title':'Stage · 3 mois ou plus','ac-item':'Développement Full Stack',
         'al-label':'Langues','lang-fr':'Français','lang-fr-l':'Natif','lang-nat':'Natif','lang-en':'Anglais','lang-en-l':'Courant',
         'feat-tag':'Projet de Fin d\'Études · Note 16 / 20',
-        'feat-desc':'Application web pour dématérialiser les audiences d\'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et OpenAI Whisper retranscrit l\'audience au fil de la séance. Six rôles distincts avec espaces dédiés. L\'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d\'état centralisée. Principale difficulté surmontée : découper le flux audio Jitsi en segments et les envoyer à l\'API Whisper pour une transcription quasi temps réel.',
-        'fh-t-1':'Visioconférence en direct','fh-s-1':'Jitsi Meet intégré pour les audiences à distance',
-        'fh-t-2':'Transcription IA','fh-s-2':'OpenAI Whisper retranscrit chaque audience en quasi temps réel',
+        'feat-desc':'Application web pour dématérialiser les audiences d\'état civil au Sénégal. Un juge préside la séance en visioconférence (Jitsi Meet), les parties comparaissent à distance, le greffier instruit le dossier, et l\'enregistrement de l\'audience est transcrit par Whisper (via l\'API Groq) pour préparer le procès-verbal. Six rôles distincts avec espaces dédiés. L\'authentification, les convocations et les notifications passent toutes par email (OTP inclus). Le backend Laravel expose une API REST complète ; le frontend React (Vite + Tailwind) est structuré par composants avec gestion d\'état centralisée. Principale difficulté surmontée : sécuriser la salle d\'audience Jitsi auto-hébergée, avec un accès par jeton JWT, une salle d\'attente où chaque partie confirme son identité par code OTP, et aucune entrée avant le juge.',
+        'fh-t-1':'Visioconférence en direct','fh-s-1':'Jitsi Meet auto-hébergé, accès par jeton JWT',
+        'fh-t-2':'Transcription IA','fh-s-2':'Whisper transcrit l\'enregistrement pour préparer le procès-verbal',
         'fh-t-3':'OTP & notifications par email','fh-s-3':'Authentification, convocations et alertes envoyées par email',
         'fh-t-4':'API REST · Laravel / MySQL','fh-s-4':'Backend structuré avec modélisation UML complète',
         'fh-t-5':'Gestion des rôles','fh-s-5':'Juge, greffier, procureur, justiciable, avocat et admin, chacun avec son espace dédié',
@@ -1524,7 +1524,7 @@ footer {
         'cat-cahier':'Gestion · Finance','desc-cahier':'Appli pour suivre ce qu\'on doit et ce qu\'on nous doit. Simple, rapide, sans prise de tête.',
         'cat-opht':'Santé · Clinique unique','desc-opht':'Version initiale : gestion des dossiers patients, consultations et rendez-vous pour une seule clinique.',
         'cat-inond':'Environnement · Cartographie','desc-inond':'Signalement et cartographie des zones inondables au Sénégal.',
-        'cat-tasks':'Éducation · Full Stack','desc-tasks':'Plateforme de gestion de projets et tâches pour étudiants et professeurs : assignation, suivi de progression, alertes de deadline.'administration.',
+        'cat-tasks':'Éducation · Full Stack','desc-tasks':'Plateforme de gestion de projets et tâches pour étudiants et professeurs : assignation, suivi de progression, alertes de deadline.',
         'cat-opht2':'Santé · Multi-sites','desc-opht2':'Version étendue : gestion multi-sites pour un ophtalmologue en libéral : agenda, consultations, ordonnances PDF, données chiffrées. Laravel 12 + Next.js.',
         'sk-lang':'Langages','sk-db':'Bases de données','sk-tools':'Outils & DevOps','sk-sys':'Systèmes & Réseaux',
         'cert-sub-1':'OSPF, VLAN, STP, réseaux sans fil','cert-sub-2':'Adressage IP, configuration d\'équipements Cisco',
@@ -1560,15 +1560,15 @@ footer {
         'stat-pfe':'Final project · High honours','stat-gh':'GitHub repos','stat-cisco':'Cisco certs','stat-en':'Proficient',
         'sec-00':'About','sec-01':'Selected projects','sec-02':'Technical skills','sec-03':'Education & Experience','sec-04':'Contact',
         'apropos-lead':'I build digital tools that solve real problems. No demos.',
-        'apropos-p1':'My final-year project <em>Audience+</em> proves it: an application that lets Senegalese families resolve civil status matters remotely, without queuing, with near-real-time AI transcription.',
+        'apropos-p1':'My final-year project <em>Audience+</em> proves it: an application that lets Senegalese families resolve civil status matters remotely, without queuing, with AI transcription that drafts the hearing record.',
         'apropos-p2':'Trained at ESMT in Distributed Application Development, I master the full stack: from REST API design to React interfaces, UML modelling, databases and networks. I am preparing a Master\'s in AI & Big Data at ESP-UCAD to go further in applied AI.',
         'apropos-p3':'I am looking for an internship where I can learn fast, contribute meaningfully and work on products with real impact, in Africa or internationally.',
         'ac-label':'What I\'m looking for','ac-title':'Internship · 3+ months','ac-item':'Full Stack Development',
         'al-label':'Languages','lang-fr':'French','lang-fr-l':'Native','lang-nat':'Native','lang-en':'English','lang-en-l':'Proficient',
         'feat-tag':'Final Year Project · Grade 16 / 20',
-        'feat-desc':'Web application to digitalise civil status hearings in Senegal. A judge chairs the session by video conference (Jitsi Meet), parties attend remotely, the clerk processes the file, and OpenAI Whisper transcribes the hearing as the session unfolds. Six distinct roles with dedicated interfaces. Authentication, summons and notifications all go by email (OTP included). The Laravel backend exposes a full REST API; the React frontend (Vite + Tailwind) is component-structured with centralised state management. Main challenge overcome: splitting the Jitsi audio stream into segments and sending them to the Whisper API for near-real-time transcription.',
-        'fh-t-1':'Live video conference','fh-s-1':'Jitsi Meet integrated for remote hearings',
-        'fh-t-2':'AI transcription','fh-s-2':'OpenAI Whisper transcribes each hearing in near real time',
+        'feat-desc':'Web application to digitalise civil status hearings in Senegal. A judge chairs the session by video conference (Jitsi Meet), parties attend remotely, the clerk processes the file, and the hearing recording is transcribed by Whisper (via the Groq API) to draft the official record. Six distinct roles with dedicated interfaces. Authentication, summons and notifications all go by email (OTP included). The Laravel backend exposes a full REST API; the React frontend (Vite + Tailwind) is component-structured with centralised state management. Main challenge overcome: securing the self-hosted Jitsi hearing room, with JWT-based access, a waiting room where each party confirms their identity with an OTP code, and no one admitted before the judge.',
+        'fh-t-1':'Live video conference','fh-s-1':'Self-hosted Jitsi Meet with JWT access',
+        'fh-t-2':'AI transcription','fh-s-2':'Whisper transcribes the recording to draft the official record',
         'fh-t-3':'OTP & email notifications','fh-s-3':'Authentication, summons and alerts sent by email',
         'fh-t-4':'REST API · Laravel / MySQL','fh-s-4':'Structured backend with full UML modelling',
         'fh-t-5':'Role management','fh-s-5':'Judge, clerk, prosecutor, litigant, lawyer and admin, each with their own dedicated space',
